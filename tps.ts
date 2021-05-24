@@ -7,7 +7,7 @@ let MakeReq = true;
 let Timer = 0;
 
 const options = {
-	hostname: 'localhost',
+	hostname: '52.231.155.110',
 	path: '/',
 	port: '3000',
 	method: "GET"
