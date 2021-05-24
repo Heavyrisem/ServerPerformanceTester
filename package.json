@@ -1,0 +1,21 @@
+{
+    "name": "loadbalancetest",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "dependencies": {
+        "concurrently": "^6.2.0",
+        "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.11",
+        "@types/node": "^15.6.0"
+    },
+    "scripts": {
+        "start": "tsc && concurrently \" node dist/server 3000 \" \" node dist/server 3001 \"",
+        "test": "tsc && node dist/Looptester",
+        "tps": "tsc && node dist/tps"
+    },
+    "author": "",
+    "license": "ISC"
+}
