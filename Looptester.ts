@@ -4,14 +4,14 @@ let avgDelay = 0;
 let max = 0;
 let min = -1;
 let finishCount = 0;
-let Connections = 100;
+let Connections = 50;
 
 const options = {
 	host: '52.231.183.177',
 	path: '/',
 	port: 80,
 	method: "GET",
-	Loop: 50
+	Loop: 500
 };
 
 function Requester(callback: Function): void {
