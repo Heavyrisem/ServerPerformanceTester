@@ -4,14 +4,14 @@ let avgDelay = 0;
 let max = 0;
 let min = -1;
 let finishCount = 0;
-let Connections = 50;
+let Connections = 100;
 
 const options = {
 	host: '52.231.183.177',
 	path: '/',
 	port: 80,
 	method: "GET",
-	Loop: 500
+	Loop: 100
 };
 
 function Requester(callback: Function): void {
@@ -34,9 +34,10 @@ function Requester(callback: Function): void {
 			avgDelay += time;
 			c++;
 			finishCount++;
-			if (c == options.Loop) {callback(); return serverSocket.end()};
+			if (c == options.Loop) {return serverSocket.end()};
 			SendReq();
 		});
+		serverSocket.on('end', () => {callback()})
 		
 		SendReq();
 
